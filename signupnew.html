@@ -87,6 +87,7 @@ button:hover {
     }
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
+    console.log(users)
     const existingUser = users.find(user => user.username === username);
 
     if (existingUser) {

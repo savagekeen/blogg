@@ -78,7 +78,7 @@ h2 {
   line-height: 1.4;
 }
 
-/* Additional styles for like/unlike buttons */
+
 .like-button,
 .unlike-button {
   background-color: #ccc;
@@ -95,7 +95,7 @@ h2 {
 </style>
 <body>
   <div class="container">
-    <h2>Welcome to the Dashboard</h2>
+    <h2>Welcome to the Dashboard <span id=""></span></h2>
     <button id="logout-button" class="logout-button">Logout</button>
     <p id="welcome-message" class="welcome-message"></p>
     <form id="blog-form">
@@ -110,6 +110,8 @@ h2 {
 
 </body>
 <script>
+  let existingUsers = JSON.parse(localStorage.getItem("existingUser"))
+  console.log(existingUsers)
   document.addEventListener("DOMContentLoaded", function () {
   const blogForm = document.getElementById("blog-form");
   const showAllButton = document.getElementById("show-all-button");
@@ -164,16 +166,16 @@ h2 {
     const target = event.target;
 
     if (target.classList.contains("like-button")) {
-      // Implement your like button logic here
+      
     } else if (target.classList.contains("unlike-button")) {
-      // Implement your unlike button logic here
+
     } else if (target.classList.contains("delete-button")) {
       target.parentNode.remove();
     }
   });
 
   logoutButton.addEventListener("click", function () {
-    // Implement logout logic here
+  window.location.href = "newlogin.html"
   });
 });
 
